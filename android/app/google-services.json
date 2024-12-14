@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "241261823588",
+    "project_id": "latihan-22a",
+    "storage_bucket": "latihan-22a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241261823588:android:55ed26f45d1d90ea470171",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241261823588-bir203vtvhgifti452pt6q0aoi4vfobr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeBm3mknlWS2ysXFxw4vwcP4m7zUHDpEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241261823588-bir203vtvhgifti452pt6q0aoi4vfobr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241261823588:android:30988ea2beb08a43470171",
+        "android_client_info": {
+          "package_name": "com.example.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241261823588-vg2govkbc1k41lh6nlujn5p391loe4aj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapp",
+            "certificate_hash": "57411abfdf9d8bfd260e989b39f6518e90e99005"
+          }
+        },
+        {
+          "client_id": "241261823588-bir203vtvhgifti452pt6q0aoi4vfobr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeBm3mknlWS2ysXFxw4vwcP4m7zUHDpEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241261823588-bir203vtvhgifti452pt6q0aoi4vfobr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241261823588:android:cb6742bd4d7dbc7a470171",
+        "android_client_info": {
+          "package_name": "pita.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241261823588-bir203vtvhgifti452pt6q0aoi4vfobr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeBm3mknlWS2ysXFxw4vwcP4m7zUHDpEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241261823588-bir203vtvhgifti452pt6q0aoi4vfobr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
