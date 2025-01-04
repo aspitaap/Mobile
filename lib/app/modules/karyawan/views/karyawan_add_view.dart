@@ -1,15 +1,14 @@
-import 'package:myapp/app/modules/mahasiswa/controllers/mahasiswa_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/app/modules/karyawan/controllers/karyawan_controller.dart';
 import 'package:get/get.dart';
-import 'package:myapp/app/modules/pegawai/controllers/pegawai_controller.dart';
 
-class PegawaiAddView extends GetView<PegawaiController> {
-  const PegawaiAddView({Key? key}) : super(key: key);
+class KaryawanAddView extends GetView<KaryawanController> {
+  const KaryawanAddView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tambah Pegawai'),
+        title: const Text('Tambah Karyawan'),
         centerTitle: true,
       ),
       body: Padding(
@@ -17,35 +16,32 @@ class PegawaiAddView extends GetView<PegawaiController> {
         child: Column(
           children: [
             TextField(
-              controller: controller.cNik,
+              controller: controller.cNo_Karyawan,
               autocorrect: false,
               textInputAction: TextInputAction.next,
-              decoration: InputDecoration(labelText: "NIK"),
+              decoration: InputDecoration(labelText: "No_Karyawan"),
             ),
             SizedBox(
               height: 10,
             ),
             TextField(
-              controller: controller.cNama,
+              controller: controller.cNama_Karyawan,
               textInputAction: TextInputAction.done,
-              decoration: InputDecoration(labelText: "Nama"),
-            ),
-            SizedBox(
-              height: 30,
+              decoration: InputDecoration(labelText: "Nama Karyawan"),
             ),
             TextField(
-              controller: controller.cJabatan,
+              controller: controller.cJabatan_Karyawan,
               textInputAction: TextInputAction.done,
-              decoration: InputDecoration(labelText: "JABATAN"),
+              decoration: InputDecoration(labelText: "Jabatan_Karyawan"),
             ),
             SizedBox(
               height: 30,
             ),
             ElevatedButton(
               onPressed: () => controller.add(
-                controller.cNik.text,
-                controller.cNama.text,
-                controller.cJabatan.text,
+                controller.cNo_Karyawan.text,
+                controller.cNama_Karyawan.text,
+                controller.cJabatan_Karyawan.text,
               ),
               child: Text("Simpan"),
             )

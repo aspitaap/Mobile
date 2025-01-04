@@ -12,6 +12,7 @@ abstract class Routes {
   static const MAHASISWA_UPDATE = _Paths.MAHASISWA + _Paths.MAHASISWA_UPDATE;
   static const DOSEN = _Paths.DOSEN;
   static const PEGAWAI = _Paths.PEGAWAI;
+  static const KARYAWAN_22312046 = _Paths.KARYAWAN_22312046;
 }
 
 abstract class _Paths {
@@ -25,4 +26,5 @@ abstract class _Paths {
   static const MAHASISWA_UPDATE = '/mahasiswa-update';
   static const DOSEN = '/dosen';
   static const PEGAWAI = '/pegawai';
+  static const KARYAWAN_22312046 = '/karyawan-22312046';
 }

@@ -1,16 +1,14 @@
-import 'package:myapp/app/modules/mahasiswa/views/mahasiswa_update_view.dart';
-import 'package:myapp/app/modules/pegawai/controllers/pegawai_controller.dart';
-import 'package:myapp/app/modules/pegawai/views/pegawai_update_view.dart';
+import 'package:myapp/app/modules/karyawan/controllers/karyawan_controller.dart';
+import 'package:myapp/app/modules/karyawan/views/karyawan_update_view.dart';
+import 'package:myapp/app/modules/karyawan/views/karyawan_update_view.dart';
 import 'package:myapp/app/routes/app_pages.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
+import '../controllers/karyawan_controller.dart';
 
-import '../controllers/pegawai_controller.dart';
-
-class PegawaiView extends GetView<PegawaiController> {
-  void showOption(id) async {
+class KaryawanView extends GetView<KaryawanController> {
+  void showOption(no_karyawan) async {
     var result = await Get.dialog(
       SimpleDialog(
         children: [
@@ -18,8 +16,8 @@ class PegawaiView extends GetView<PegawaiController> {
             onTap: () {
               Get.back();
               Get.to(
-                PegawaiUpdateView(),
-                arguments: id,
+                KaryawanUpdateView(),
+                arguments: no_karyawan,
               );
             },
             title: Text('Update'),
@@ -27,11 +25,10 @@ class PegawaiView extends GetView<PegawaiController> {
           ListTile(
             onTap: () {
               Get.back();
-              controller.delete(id);
+              controller.delete(no_karyawan);
             },
             title: Text('Delete'),
           ),
-
           ListTile(
             onTap: () => Get.back(),
             title: Text('Close'),
@@ -45,7 +42,7 @@ class PegawaiView extends GetView<PegawaiController> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot<Object?>>(
-      stream: Get.put(PegawaiController()).streamData(),
+      stream: Get.put(KaryawanController()).streamData(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.active) {
           // mengambil data
@@ -59,16 +56,16 @@ class PegawaiView extends GetView<PegawaiController> {
                       backgroundColor: Color.fromARGB(255, 248, 248, 248),
                     ),
                     title: Text(
-                        "${(listAllDocs[index].data() as Map<String, dynamic>)["nama"]}"),
+                        "${(listAllDocs[index].data() as Map<String, dynamic>)["nama_karyawan"]}"),
                     subtitle: Text(
-                        "${(listAllDocs[index].data() as Map<String, dynamic>)["jabatan"]}"),
+                        "${(listAllDocs[index].data() as Map<String, dynamic>)["no_karyawan"]} | ${(listAllDocs[index].data() as Map<String, dynamic>)["jabatan_karyawan"]}"),
                     trailing: IconButton(
                         onPressed: () => showOption(listAllDocs[index].id),
                         icon: Icon(Icons.more_vert)),
                   ),
                 )
               : Center(
-                  child: Text("Data Kosong"),
+                  child: Text("Data Kosong "),
                 );
         }
         return Center(
