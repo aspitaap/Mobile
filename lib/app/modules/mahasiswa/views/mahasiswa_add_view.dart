@@ -2,13 +2,13 @@ import 'package:myapp/app/modules/mahasiswa/controllers/mahasiswa_controller.dar
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MahasiswaAddView extends GetView<MahasiswaController> {
-  const MahasiswaAddView({Key? key}) : super(key: key);
+class MatakuliahAddView extends GetView<MatakuliahController> {
+  const MatakuliahAddView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tambah Mahasiswa'),
+        title: const Text('Tambah Matakuliah'),
         centerTitle: true,
       ),
       body: Padding(
@@ -16,26 +16,32 @@ class MahasiswaAddView extends GetView<MahasiswaController> {
         child: Column(
           children: [
             TextField(
-              controller: controller.cNpm,
+              controller: controller.cKodeMatakuliah,
               autocorrect: false,
               textInputAction: TextInputAction.next,
-              decoration: InputDecoration(labelText: "NPM"),
+              decoration: InputDecoration(labelText: "kode_matakuliah"),
             ),
             SizedBox(
               height: 10,
             ),
             TextField(
-              controller: controller.cNama,
+              controller: controller.cNamaMatakuliah,
               textInputAction: TextInputAction.done,
-              decoration: InputDecoration(labelText: "Nama"),
+              decoration: InputDecoration(labelText: "nama_matakuliah"),
             ),
             SizedBox(
               height: 30,
             ),
+            TextField(
+              controller: controller.cSksMatakuliah,
+              textInputAction: TextInputAction.done,
+              decoration: InputDecoration(labelText: "sks_matakuliah"),
+            ),
             ElevatedButton(
               onPressed: () => controller.add(
-                controller.cNpm.text,
-                controller.cNama.text,
+                controller.cKodeMatakuliah.text,
+                controller.cNamaMatakuliah.text,
+                controller.cSksMatakuliah.text,
               ),
               child: Text("Simpan"),
             )

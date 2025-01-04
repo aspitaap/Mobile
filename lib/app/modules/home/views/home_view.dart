@@ -32,15 +32,15 @@ class _DashboardAdminState extends State<DashboardAdmin> {
   int _index = 0;
   List<Map> _fragment = [
     {
-      'title': 'Dashboard',
-      'view': MahasiswaView(),
-      'add': () => MahasiswaAddView(),
+      'title': 'Matakuliah_22312046',
+      'view': MatakuliahView(),
+      'add': () => MatakuliahAddView(),
     },
-    {
-      'title': 'Data Mahasiswa',
-      'view': MahasiswaView(),
-      'add': () => MahasiswaAddView(),
-    },
+    // {
+    //   'title': 'Data Mahasiswa',
+    //   'view': MahasiswaView(),
+    //   'add': () => MahasiswaAddView(),
+    // },
     {
       'title': 'Data Dosen',
       'view': DosenView(),
@@ -112,7 +112,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
           Get.back();
         },
         leading: Icon(Icons.dashboard),
-        title: Text('Dashboard'),
+        title: Text('Data Matakuliah'),
         trailing: Icon(Icons.navigate_next),
         iconColor: Colors.teal,
         textColor: Colors.teal,

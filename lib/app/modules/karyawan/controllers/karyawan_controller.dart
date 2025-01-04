@@ -96,9 +96,8 @@ class KaryawanController extends GetxController {
     }
   }
 
-  void delete(String no_karyawan) {
-    DocumentReference docRef =
-        firestore.collection("karyawan_22312035").doc(no_karyawan);
+  void delete(String id) {
+    DocumentReference docRef = firestore.collection("karyawan_22312046").doc(id);
 
     try {
       Get.defaultDialog(

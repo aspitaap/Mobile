@@ -45,11 +45,11 @@ class AppPages {
       page: () => ResetPasswordView(),
       binding: ResetPasswordBinding(),
     ),
-    GetPage(
-      name: _Paths.MAHASISWA,
-      page: () => MahasiswaView(),
-      binding: MahasiswaBinding(),
-    ),
+    // GetPage(
+    //   name: _Paths.MAHASISWA,
+    //   page: () => MahasiswaView(),
+    //   binding: MahasiswaBinding(),
+    // ),
     GetPage(
       name: _Paths.DOSEN,
       page: () => DosenView(),

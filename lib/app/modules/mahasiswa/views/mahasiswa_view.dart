@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 import '../controllers/mahasiswa_controller.dart';
 
-class MahasiswaView extends GetView<MahasiswaController> {
+class MatakuliahView extends GetView<MatakuliahController> {
   void showOption(id) async {
     var result = await Get.dialog(
       SimpleDialog(
@@ -16,7 +16,7 @@ class MahasiswaView extends GetView<MahasiswaController> {
             onTap: () {
               Get.back();
               Get.to(
-                MahasiswaUpdateView(),
+                MatakuliahUpdateView(),
                 arguments: id,
               );
             },
@@ -43,7 +43,7 @@ class MahasiswaView extends GetView<MahasiswaController> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot<Object?>>(
-      stream: Get.put(MahasiswaController()).streamData(),
+      stream: Get.put(MatakuliahController()).streamData(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.active) {
           // mengambil data
@@ -57,19 +57,28 @@ class MahasiswaView extends GetView<MahasiswaController> {
                       backgroundColor: Color.fromARGB(255, 248, 248, 248),
                     ),
                     title: Text(
-                        "${(listAllDocs[index].data() as Map<String, dynamic>)["nama"]}"),
-                    subtitle: Text(
-                        "${(listAllDocs[index].data() as Map<String, dynamic>)["npm"]}"),
+                      "${(listAllDocs[index].data() as Map<String, dynamic>)["kode_matakuliah"]}",
+                    ),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                            "${(listAllDocs[index].data() as Map<String, dynamic>)["nama_matakuliah"]}"),
+                        Text(
+                            "${(listAllDocs[index].data() as Map<String, dynamic>)["sks_matakuliah"]}"),
+                      ],
+                    ),
                     trailing: IconButton(
-                        onPressed: () => showOption(listAllDocs[index].id),
-                        icon: Icon(Icons.more_vert)),
+                      onPressed: () => showOption(listAllDocs[index].id),
+                      icon: const Icon(Icons.more_vert),
+                    ),
                   ),
                 )
-              : Center(
+              : const Center(
                   child: Text("Data Kosong"),
                 );
         }
-        return Center(
+        return const Center(
           child: CircularProgressIndicator(),
         );
       },
